@@ -7,6 +7,22 @@ Application used alongside the Fire Detecting Drone project (for University) whi
 - **Python Interoperability**: Communication between Java and Python handled via TCP sockets for data retrieval.
 - **Data Overview**: Full data overview received from the Drone to analyse and send to authorities (mock concept).
 
+## How to Use
+When opening the application, the user will be greeted with a panel in which they can insert the host and port of the server they wish to connect to.
+
+<img src="screenshots/server_data.png" width="350"/>
+
+After inserting a correct host and port (which will accept the connection request), the user will have to wait for drone data sent from the server.
+The drone data is in CSV format and is of the following form: drone_name,latitude,longitude,fireDetected,fireProbability,batteryLevel,altitude.
+If the server does not send all the data in this format it will not be correctly interpreted in the Dashboard.
+
+<img src="screenshots/drone_waiting.png" width="500"/>
+
+After receiving correct data in the correct format from the Drone, it will be displayed. The `Send Data to Authorities` button will also be clickable now,
+although it is not programmed to do anything as of this moment.
+
+<img src="screenshots/drone_data.png" width="500"/>
+
 ## Prerequisites
 - **Java 11+** (JDK/JRE installed)
 - **Python Fire-Detecting Drone server** running (private companion project)
